@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Determinante</title>
+    <style>
+        body {
+            background-image: url('tu_imagen_de_fondo.jpg');
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(196, 17, 17, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid #3498db;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Determinante</h1>
+        <table>
+            <tr>
+                <td><input type="text" id="m11" readonly></td>
+                <td><input type="text" id="m12" readonly></td>
+                <td><input type="text" id="m13" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="m21" readonly></td>
+                <td><input type="text" id="m22" readonly></td>
+                <td><input type="text" id="m23" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="m31" readonly></td>
+                <td><input type="text" id="m32" readonly></td>
+                <td><input type="text" id="m33" readonly></td>
+            </tr>
+        </table>
+        <button onclick="calcularDeterminante()">Calcular Determinante</button>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function calcularDeterminante() {
+            // Obtén los valores de los elementos de la matriz desde los campos de entrada
+            const m11 = parseFloat(document.getElementById("m11").value);
+            const m12 = parseFloat(document.getElementById("m12").value);
+            const m13 = parseFloat(document.getElementById("m13").value);
+            const m21 = parseFloat(document.getElementById("m21").value);
+            const m22 = parseFloat(document.getElementById("m22").value);
+            const m23 = parseFloat(document.getElementById("m23").value);
+            const m31 = parseFloat(document.getElementById("m31").value);
+            const m32 = parseFloat(document.getElementById("m32").value);
+            const m33 = parseFloat(document.getElementById("m33").value);
+
+            // Calcula la determinante utilizando la fórmula
+            const det = (m11 * (m22 * m33 - m23 * m32)) - (m12 * (m21 * m33 - m23 * m31)) + (m13 * (m21 * m32 - m22 * m31));
+
+            // Muestra el resultado en la página
+            document.getElementById("resultado").textContent = "Determinante: " + det;
+        }
+    </script>
+</body>
+</html>

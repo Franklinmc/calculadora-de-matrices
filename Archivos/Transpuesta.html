@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matriz Transpuesta</title>
+    <style>
+        body {
+            background-image: url('https://genuinocloud.com/wp-content/uploads/2020/12/qelni.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        .container {
+            font-family: Arial, sans-serif;
+            width: 960px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+        .input-label {
+            font-size: 20px;
+            color: #333;
+        }
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Matriz Transpuesta</h2>
+        <form>
+            <label for="filas" class="input-label">Filas:</label>
+            <input type="number" id="filas" min="2" max="5"><br>
+
+            <label for="columnas" class="input-label">Columnas:</label>
+            <input type="number" id="columnas" min="2" max="5"><br>
+
+            <button type="button" onclick="crearMatriz()">Crear Matriz</button>
+        </form>
+
+        <div id="matriz"></div>
+
+        <button type="button" onclick="calcularTranspuesta()">Calcular Transpuesta</button>
+
+        <div id="transpuesta"></div>
+    </div>
+
+    <script>
+        function crearMatriz() {
+            var filas = parseInt(document.getElementById('filas').value);
+            var columnas = parseInt(document.getElementById('columnas').value);
+            var matriz = document.getElementById('matriz');
+            matriz.innerHTML = '';
+
+            for (var i = 0; i < filas; i++) {
+                for (var j = 0; j < columnas; j++) {
+                    matriz.innerHTML += '<input type="number" id="valor_' + i + '_' + j + '">';
+                }
+                matriz.innerHTML += '<br>';
+            }
+        }
+
+        function calcularTranspuesta() {
+            var filas = parseInt(document.getElementById('filas').value);
+            var columnas = parseInt(document.getElementById('columnas').value);
+            var transpuesta = document.getElementById('transpuesta');
+            transpuesta.innerHTML = '';
+
+            for (var i = 0; i < columnas; i++) {
+                for (var j = 0; j < filas; j++) {
+                    var valor = document.getElementById('valor_' + j + '_' + i).value;
+                    transpuesta.innerHTML += valor + ' ';
+                }
+                transpuesta.innerHTML += '<br>';
+            }
+        }
+    </script>
+</body>
+</html>
+

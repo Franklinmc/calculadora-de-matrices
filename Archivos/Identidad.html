@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matriz Identidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #3498db; /* Color de fondo azul */
+            color: #fff; /* Color de texto blanco */
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #333; /* Color de texto para etiquetas */
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Color de fondo verde */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #matrixContainer {
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de Matriz Identidad</h1>
+    <form id="matrixForm">
+        <label for="matrixSize">Tamaño de la matriz:</label>
+        <input type="number" id="matrixSize" min="1" required>
+        <input type="submit" value="Generar Matriz Identidad">
+    </form>
+
+    <div id="matrixContainer"></div>
+
+    <script>
+        document.getElementById("matrixForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const size = parseInt(document.getElementById("matrixSize").value);
+
+            if (!isNaN(size) && size > 0) {
+                const matrix = generateIdentityMatrix(size);
+                displayMatrix(matrix);
+            }
+        });
+
+        function generateIdentityMatrix(size) {
+            const matrix = Array.from({ length: size }, (_, i) =>
+                Array.from({ length: size }, (_, j) => i === j ? 1 : 0)
+            );
+            return matrix;
+        }
+
+        function displayMatrix(matrix) {
+            const matrixContainer = document.getElementById("matrixContainer");
+            matrixContainer.innerHTML = "";
+
+            const table = document.createElement("table");
+
+            matrix.forEach(row => {
+                const tableRow = document.createElement("tr");
+                row.forEach(cellValue => {
+                    const cell = document.createElement("td");
+                    cell.textContent = cellValue;
+                    tableRow.appendChild(cell);
+                });
+                table.appendChild(tableRow);
+            });
+
+            matrixContainer.appendChild(table);
+        }
+    </script>
+</body>
+</html>
