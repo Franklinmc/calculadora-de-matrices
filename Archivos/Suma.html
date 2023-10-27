@@ -8,26 +8,44 @@
             text-align: center;
             margin: 0;
             background-color: #0D1117; /* Color de fondo azul oscuro */
-            color: #649ee0; /* Color de texto gris claro */
+            color: #FFD700; /* Color de texto dorado */
         }
         h1 {
-            color: #ffe358; /* Color del título azul claro */
+            color: #FF4500; /* Color del título naranja oscuro */
         }
         .matrices-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 10px;
             margin: 20px auto;
-            text-align: left;
+            text-align: center;
         }
         .matrix {
-            color: red;
+            background-color: #6495ED; /* Color de fondo azul claro */
+            color: #000; /* Color del texto negro */
+            border: 2px solid #4169E1; /* Borde azul oscuro */
+            border-radius: 10px;
+            padding: 10px;
         }
         input {
             width: 60px;
+            padding: 5px;
         }
         #error-message {
-            color: red;
+            color: #FF4500; /* Color del mensaje de error naranja oscuro */
+        }
+        button {
+            background-color: #FF6347; /* Color de fondo del botón rojo claro */
+            color: #FFF; /* Color del texto blanco */
+            border: 2px solid #FF4500; /* Borde naranja oscuro */
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        button:hover {
+            background-color: #FF4500; /* Cambio de color de fondo al pasar el puntero */
+            border-color: #FF6347; /* Cambio de color del borde al pasar el puntero */
         }
     </style>
 </head>

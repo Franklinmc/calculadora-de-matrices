@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Algebra Lineal</title>
+    <title>Álgebra Lineal</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <a href="proyectoalgebralineal.com"></a>
     <style>
         body {
-            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4mrQtMZgzuzeo9m8DzXzwzingwXb8cbCsWQ&usqp=CAU");
+            background: url("https://i.pinimg.com/564x/67/ef/af/67efaf403046bb1a4d5e24224f1091e1.jpg");
             background-size: cover;
             background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             text-align: center;
-            background-color: rgba(75, 50, 235, 0.397);
+            background-color: var(--amber-300);
             border-radius: 10px;
-            border: 10px;
-            margin: 10px;
+            margin: 10px auto;
+            width: 60%;
+            padding: 20px;
         }
         .container {
             display: flex;
-            justify-content: space-between;
-            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
         }
         .operation {
-            background-color: transparent;
-            border: 2px solid rgb(202, 26, 26);
+            background-color: var(--amber-100);
+            border: 2px solid var(--amber-400);
             border-radius: 10px;
             text-align: center;
+            margin: 10px;
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.2s ease;
+        }
+        .operation:hover {
+            transform: scale(1.05);
         }
         .operation h2 {
-            text-align: center;
             background: linear-gradient(to bottom , skyblue, white);
-
             padding: 10px;
             border: 2px solid black;
             border-radius: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--amber-500);
+            color: white;
+            text-decoration: none;
+            border: 2px solid var(--amber-800); /* Bordes notorios */
+            border-radius: 5px;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .button:hover {
+            background-color: var(--amber-700); /* Color llamativo al pasar el puntero */
+            border-color: var(--amber-900); /* Cambio de color del borde al pasar el puntero */
         }
     </style>
 </head>
 <body>
     <h1>Matrices</h1>
-    <div>
     <div class="container">
         <div class="operation">
             <h2>Suma de matrices</h2>
-            <button><a href="Suma.html" class="Button">Seleccionar</a></button>
+            <a href="Suma.html" class="button">Seleccionar</a>
         </div>
-    </div>
-    <div class="container">
         <div class="operation">
             <h2>Inversa de matriz</h2>
-            <button><a href="Inversa.html" class="button">Seleccionar</a></button>
+            <a href="Inversa.html" class="button">Seleccionar</a>
         </div>
         <div class="operation">
             <h2>Determinante de una matriz</h2>
-            <button><a href="Determinante.html"class="button">Seleccionar</a></button>
+            <a href="Determinante.html" class="button">Seleccionar</a>
         </div>
-    </div>
-
-    <div class="container">
         <div class="operation">
             <h2>Transpuesta de una matriz</h2>
-            <button><a href="transpuesta.html" class="button">Seleccionar</a></button>
+            <a href="transpuesta.html" class="button">Seleccionar</a>
         </div>
         <div class="operation">
             <h2>Multiplicación de matrices</h2>
-            <button><a href="Multiplicacion.html" class="button">Seleccionar</a></button>
+            <a href="Multiplicacion.html" class="button">Seleccionar</a>
         </div>
-    </div>
-
-    <div class="container">
         <div class="operation">
             <h2>Matriz identidad</h2>
-            <button><a href="Identidad.html" class="button">Seleccionar</a></button>
+            <a href="Identidad.html" class="button">Seleccionar</a>
         </div>
     </div>
 </body>
